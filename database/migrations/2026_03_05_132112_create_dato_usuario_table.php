@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('telefono')->nullable();
             $table->foreignId('id_roles')->constrained('rols', 'id');
+            $table->enum('settings', ['dark', 'light']);
             $table->string('password');
             $table->timestamps();
         });
