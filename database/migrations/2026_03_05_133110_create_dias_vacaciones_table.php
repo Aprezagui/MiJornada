@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('diasVacaciones', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('id_usuario')->constrained('dato_usuario', 'id');
+            $table->foreignId('id_usuario')->constrained('users', 'id');
             $table->integer('dias_tomados');
             $table->integer('dias_validados');
             $table->timestamps();

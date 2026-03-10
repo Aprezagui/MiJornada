@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->dateTime('fecha');
             $table->string('ubicacion')->nullable();
-            $table->foreignId('id_usuario')->constrained('dato_usuario', 'id');
+            $table->foreignId('id_usuario')->constrained('users', 'id');
             $table->enum('entrada_salida', ['entrada', 'salida']); // Según tu ENUM de la imagen
             $table->timestamps();
         });

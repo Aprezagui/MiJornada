@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('usuarioGrupo', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('id_usuario')->constrained('dato_usuario', 'id')->onDelete('cascade');
+            $table->foreignId('id_usuario')->constrained('users', 'id')->onDelete('cascade');
             $table->foreignId('id_grupo')->constrained('grupoTrabajo', 'id')->onDelete('cascade');
             $table->boolean('es_principal')->default(false);
-            $table->enum('settings', ['dark', 'light']);
             $table->timestamps();
         });
     }
